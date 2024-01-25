@@ -1,5 +1,5 @@
 <script setup>
-import CartItem from './CartItem.vue';
+import CartItemList from './CartItemList.vue';
 </script>
 
 <template>
@@ -9,11 +9,13 @@ import CartItem from './CartItem.vue';
       <p class="text-2xl font-bold">Кошик</p>
       <img class="opacity-50 hover:opacity-100 transition-opacity" src="/svg/line.svg" alt="arrow" width="30" />
     </div>
-    <CartItem />
-    <CartItem />
-    <CartItem />
-    <CartItem />
-    <CartItem />
-    <CartItem />
+    <CartItemList />
+
+      <div class="flex mt-5">
+        <span>Всього:</span>
+        <div class="flex-1 border-b border-dashed"></div>
+        <b>77 397 грн</b>
+      </div>
+    <button class="bg-lime-500 w-full rounded-xl py-3 mt-5 text-white cursor-pointer disabled:bg-slate-400 hover:bg-lime-600 active:bg-lime-700">Оформити замовлення</button>
   </div>
 </template>

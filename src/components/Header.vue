@@ -10,13 +10,13 @@
 
     <ul class="flex gap-10">
       <li>
-        <img src="/svg/cart.svg" alt="" width="50" />
+        <img class="opacity-80 hover:opacity-100" src="/svg/cart.svg" alt="" width="50" />
       </li>
       <li>
-        <img src="/svg/heart.svg" alt="" width="50" />
+        <img class="opacity-80 hover:opacity-100" src="/svg/heart.svg" alt="" width="50" />
       </li>
       <li>
-        <img src="/svg/profile.svg" alt="" width="50" />
+        <img class="opacity-80 hover:opacity-100" src="/svg/profile.svg" alt="" width="50" />
       </li>
     </ul>
   </header>
