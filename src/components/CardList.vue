@@ -1,23 +1,21 @@
-<script setup>
+<!-- <script setup>
 import Card from "./Card.vue";
 defineProps({
   items: Array,
 });
 
-import { onMounted, ref } from "vue";
-import axios from "axios";
-
-const items = ref([]);
 
 onMounted(async () => {
   try {
-    const { data } = await axios.get("https://65b773df46324d531d549d38.mockapi.io/items");
+    const { data } = await axios.get(
+      `https://${API_KEY}.mockapi.io/items`
+    );
     items.value = data;
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
 });
+
 </script>
 
 <template>
@@ -30,4 +28,4 @@ onMounted(async () => {
       :imgUrl="item.imgUrl"
     />
   </div>
-</template>
+</template> -->
