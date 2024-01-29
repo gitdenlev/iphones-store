@@ -1,32 +1,29 @@
 <template>
-    <label class="ui-bookmark">
-  <input type="checkbox" />
-  <div class="bookmark">
-    <svg
-      viewBox="0 0 16 16"
-      style="margin-top:4px"
-      class="bi bi-heart-fill"
-      height="25"
-      width="25"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
-        fill-rule="evenodd"
-      ></path>
-    </svg>
-  </div>
-</label>
-
+  <label class="ui-bookmark">
+    <input type="checkbox" />
+    <div class="bookmark">
+      <svg
+        viewBox="0 0 16 16"
+        style="margin-top: 4px"
+        class="bi bi-heart-fill"
+        height="25"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+    </div>
+  </label>
 </template>
 
-
-
 <style scoped>
-    .ui-bookmark {
+.ui-bookmark {
   --icon-size: 24px;
-  --icon-secondary-color: rgb(77, 77, 77);
-  --icon-hover-color: rgb(97, 97, 97);
+  --icon-secondary-color: rgba(206, 206, 206, 0.8);
+  --icon-hover-color: rgb(206, 206, 206, 1);
   --icon-primary-color: rgb(31, 206, 113);
   --icon-circle-border: 1px solid var(--icon-primary-color);
   --icon-circle-size: 35px;
@@ -225,5 +222,4 @@
     opacity: 0;
   }
 }
-
 </style>
