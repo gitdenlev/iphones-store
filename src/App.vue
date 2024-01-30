@@ -9,37 +9,41 @@ import axios from "axios";
 const items = ref([]);
 const API_KEY = "65b773df46324d531d549d38";
 
-
-
 const filtres = reactive({
-  sortBy: "",
-  searchQuery: ""
-})
+  sortBy: "title",
+  searchQuery: "",
+});
 
-
-const onChangeSelect = event => {
+const onChangeSelect = (event) => {
   filtres.sortBy = event.target.value;
 };
 
+const onChangeSearchInput = (event) => {
+  filtres.searchQuery = event.target.value;
+};
 
-
-onMounted(async () => {
+const fetchItems = async () => {
   try {
-    const { data } = await axios.get(`https://${API_KEY}.mockapi.io/items`);
+    const params = {
+      sortBy: filtres.sortBy,
+    };
+
+    if (filtres.searchQuery) {
+      params.title = filtres.searchQuery;
+    }
+
+
+    const { data } = await axios.get(`https://${API_KEY}.mockapi.io/items`, {
+      params,
+    });
     items.value = data;
   } catch (error) {
     console.log(error);
   }
-});
+};
 
-watch(filtres, async () => {
-  try {
-    const { data } = await axios.get(`https://${API_KEY}.mockapi.io/items?sortBy=` + filtres.sortBy);
-    items.value = data;
-  } catch (error) {
-    console.log(error);
-  }
-});
+onMounted(fetchItems);
+watch(filtres, fetchItems);
 </script>
 
 <template>
@@ -65,6 +69,7 @@ watch(filtres, async () => {
               width="24"
             />
             <input
+              @input="onChangeSearchInput"
               class="bg-gray-100 py-2 pl-10 pr-4 rounded-md text-black outline-none shadow-md"
               type="text"
               placeholder="Пошук"
